@@ -1,0 +1,12 @@
+#!/bin/sh
+# Usage: tmpme <files>
+# Summary: Spawn a new shell in a temporary directory, optionally copying files
+# Help: Create a temporary directory and drop me in it in a new subshell.
+# Copy any files supplied as arguments, delete them on exit.
+
+mkdir -p $HOME/tmp
+tmpme=`mktemp -d --tmpdir=$HOME/tmp XXXXXXXX`
+[ $1 ] && cp -r $* $tmpme
+cd $tmpme
+$SHELL -i
+rm -rf $tmpme
