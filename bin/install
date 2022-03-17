@@ -1,0 +1,12 @@
+#!/bin/sh
+[ -x "$(command -v direnv)" ] || (curl -sfL https://direnv.net/install.sh | bash)
+[ -d "$HOME/.asdf" ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
+
+
+if [ -n "$ZSH_VERSION" ]; then
+	echo -n ""
+fi
+
+if [ -n "$BASH_VERSION" ]; then
+	echo -n ""
+fi
