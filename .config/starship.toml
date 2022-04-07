@@ -1,0 +1,40 @@
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$custom\
+$cmd_duration\
+$character"""
+
+add_newline = false
+
+[directory]
+style = "white"
+
+[git_branch]
+format = "| [$branch]($style) "
+only_attached = true
+style = "white"
+
+[git_commit]
+format = "| [$hash$tag]($style) "
+tag_disabled = false
+style = "white"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "yellow"
+
+[git_metrics]
+disabled = true
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "red"
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
