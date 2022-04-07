@@ -26,4 +26,5 @@ export KERL_BUILD_DOCS="yes"
 alias config='git -c status.showUntrackedFiles=no --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 [ -x "$(command -v nvim)" ] && alias vim=nvim
 
-source ~/.linky
+. ~/.linky
+[ -f "$HOME/.chris.local" ] && . ~/.chris.local
