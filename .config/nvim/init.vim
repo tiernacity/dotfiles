@@ -3,7 +3,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'tpope/vim-sensible'
-Plug 'elixir-editors/vim-elixir'
+Plug 'tpope/vim-endwise'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 lua <<EOF
@@ -47,9 +48,9 @@ end)
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = false,
+    additional_vim_regex_highlighting = true,
   },
-    incremental_selection = {
+  incremental_selection = {
     enable = true,
     keymaps = {
       init_selection = "gnn",
@@ -59,7 +60,7 @@ require'nvim-treesitter.configs'.setup {
     },
   },
   indent = {
-    enable = true
+    enable = false
   }
 }
 
