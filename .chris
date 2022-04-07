@@ -6,6 +6,7 @@ if [ -n "$ZSH_VERSION" ]; then
 	[ -d "$HOME/.asdf" ] && . $HOME/.asdf/asdf.sh && fpath=(${ASDF_DIR}/completions $fpath)
 
 	setopt rmstarsilent
+	bindkey -e # to make ctrl-w delete a word
 	autoload -Uz compinit && compinit
 	autoload -U +X bashcompinit && bashcompinit
 fi
