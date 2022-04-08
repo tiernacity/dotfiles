@@ -1,10 +1,12 @@
+nnoremap <silent> <C-n> :set number! relativenumber!<cr>
+
 call plug#begin()
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-endwise'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-sensible'
+Plug 'williamboman/nvim-lsp-installer'
 call plug#end()
 
 lua <<EOF
