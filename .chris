@@ -24,7 +24,7 @@ export EDITOR='vim'
 export KERL_BUILD_DOCS="yes"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-alias config='git -c status.showUntrackedFiles=no --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dotfiles='git -c status.showUntrackedFiles=no --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 [ -x "$(command -v nvim)" ] && alias vim=nvim
 
 . ~/.linky
