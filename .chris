@@ -1,14 +1,15 @@
+[ -d "/home/linuxbrew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# TODO: homebrew for macos
+
 if [ -n "$ZSH_VERSION" ]; then
 	[[ -z "$SSH_AGENT_PID" ]] && eval $(ssh-agent) && trap "ssh-agent -k" EXIT
 
 	[ -x "$(command -v direnv)" ] && eval "$(direnv hook zsh)"
 	[ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
-	[ -d "$HOME/.asdf" ] && . $HOME/.asdf/asdf.sh && fpath=(${ASDF_DIR}/completions $fpath)
 
 	setopt rmstarsilent
 	bindkey -e # to make ctrl-w delete a word
 	autoload -Uz compinit && compinit
-	autoload -U +X bashcompinit && bashcompinit
 fi
 
 if [ -n "$BASH_VERSION" ]; then
@@ -16,8 +17,9 @@ if [ -n "$BASH_VERSION" ]; then
 
 	[ -x "$(command -v direnv)" ] && eval "$(direnv hook bash)"
 	[ -x "$(command -v starship)" ] && eval "$(starship init bash)"
-	[ -d "$HOME/.asdf" ] && . $HOME/.asdf/asdf.sh && . $HOME/.asdf/completions/asdf.bash
 fi
+
+[ -d "$(brew --prefix asdf)" ] && . $(brew --prefix asdf)/libexec/asdf.sh
 
 export PATH="${HOME}/bin:$PATH"
 export EDITOR='vim'
