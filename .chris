@@ -22,7 +22,7 @@ fi
 [ -d "$(brew --prefix asdf)" ] && . $(brew --prefix asdf)/libexec/asdf.sh
 
 export PATH="${HOME}/bin:$PATH"
-export EDITOR='vim'
+export EDITOR='hx'
 export KERL_BUILD_DOCS="yes"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
