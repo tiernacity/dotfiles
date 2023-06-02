@@ -1,6 +1,6 @@
 [user]
 	name = Chris Tierney
-	email = notproperlycut@gmail.com
+	email = drchristierney@gmail.com
 
 [alias]
 	graph = log --oneline --graph --decorate --color
@@ -19,3 +19,8 @@
 [push]
 	autoSetupRemote = true
 	default = current
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
