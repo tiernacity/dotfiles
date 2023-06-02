@@ -26,6 +26,7 @@ export PATH="${HOME}/bin:$PATH"
 export EDITOR='hx'
 export KERL_BUILD_DOCS="yes"
 export ERL_AFLAGS="-kernel shell_history enabled"
+export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_installed
 
 alias dotfiles='git -c status.showUntrackedFiles=no --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias tree='tree --gitignore'
