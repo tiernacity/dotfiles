@@ -6,6 +6,7 @@
 	graph = log --oneline --graph --decorate --color
 	prlog = log --format=format:\"- %h **%s**%n%n%w(0,2,2)%b\" --reverse origin/HEAD..HEAD
 	releaselog = "!git log --oneline --no-merges --reverse $(git tag -l | head -1)..HEAD"
+	conflicts = diff --name-only --diff-filter=U --relative
 
 [pull]
 	rebase = true
