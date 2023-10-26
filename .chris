@@ -25,7 +25,7 @@ export EDITOR='hx'
 export KERL_BUILD_DOCS="yes"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-alias dotfiles='git -c status.showUntrackedFiles=no --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dotfiles='git -c status.showUntrackedFiles=no --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias tree='tree --gitignore'
 [ -x "$(command -v nvim)" ] && alias vim=nvim
 
