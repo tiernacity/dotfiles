@@ -1,11 +1,14 @@
+eval "$(pkgx --shellcode)"  #docs.pkgx.sh/shellcode
+env +starship +direnv
+
 [ -d "/home/linuxbrew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 [ -d "/opt/homebrew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 if [ -n "$ZSH_VERSION" ]; then
 	[[ -z "$SSH_AGENT_PID" ]] && eval $(ssh-agent) && trap "ssh-agent -k" EXIT
 
-	[ -x "$(command -v direnv)" ] && eval "$(direnv hook zsh)"
-	[ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
+	eval "$(direnv hook zsh)"
+	eval "$(starship init zsh)"
 
 	setopt rmstarsilent
 	bindkey -e # to make ctrl-w delete a word
@@ -16,17 +19,14 @@ fi
 if [ -n "$BASH_VERSION" ]; then
 	[[ -z "$SSH_AGENT_PID" ]] && eval $(ssh-agent) && trap "ssh-agent -k" exit
 
-	[ -x "$(command -v direnv)" ] && eval "$(direnv hook bash)"
-	[ -x "$(command -v starship)" ] && eval "$(starship init bash)"
+	eval "$(direnv hook bash)"
+	eval "$(starship init bash)"
 fi
-
-[ -d "$(brew --prefix asdf)" ] && . $(brew --prefix asdf)/libexec/asdf.sh
 
 export PATH="${HOME}/bin:$PATH"
 export EDITOR='hx'
 export KERL_BUILD_DOCS="yes"
 export ERL_AFLAGS="-kernel shell_history enabled"
-export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_installed
 
 alias dotfiles='git -c status.showUntrackedFiles=no --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias tree='tree --gitignore'

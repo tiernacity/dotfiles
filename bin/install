@@ -1,6 +1,3 @@
 #!/bin/bash
-[ -x "$(command -v apt-get)" ] && (sudo apt-get install build-essential)
-[ -x "$(command -v brew)" ] || (/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)")
-[ -x "$(command -v brew)" ] && (brew install direnv starship asdf)
-[ -x "$(command -v brew)" ] && (brew install --HEAD helix)
-[ -x "$(command -v brew)" ] && (brew upgrade)
+curl -fsS https://pkgx.sh | sh
+pkgx install tmux@latest hx@latest
