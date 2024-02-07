@@ -1,26 +1,8 @@
-eval "$(pkgx --shellcode)"  #docs.pkgx.sh/shellcode
-env +starship +direnv
-
-[ -d "/home/linuxbrew" ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-[ -d "/opt/homebrew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
-
 if [ -n "$ZSH_VERSION" ]; then
-	[[ -z "$SSH_AGENT_PID" ]] && eval $(ssh-agent) && trap "ssh-agent -k" EXIT
-
-	eval "$(direnv hook zsh)"
-	eval "$(starship init zsh)"
-
 	setopt rmstarsilent
 	bindkey -e # to make ctrl-w delete a word
 	autoload -Uz compinit && compinit
 	autoload -U +X bashcompinit && bashcompinit
-fi
-
-if [ -n "$BASH_VERSION" ]; then
-	[[ -z "$SSH_AGENT_PID" ]] && eval $(ssh-agent) && trap "ssh-agent -k" exit
-
-	eval "$(direnv hook bash)"
-	eval "$(starship init bash)"
 fi
 
 export PATH="${HOME}/bin:$PATH"
@@ -34,3 +16,21 @@ alias tree='tree --gitignore'
 
 . ~/.linky
 [ -f "$HOME/.chris.local" ] && . ~/.chris.local
+
+eval "$(pkgx --shellcode)"  #docs.pkgx.sh/shellcode
+env +tmux +starship +direnv +cargo
+
+if [ -n "$ZSH_VERSION" ]; then
+	[[ -z "$SSH_AGENT_PID" ]] && eval $(ssh-agent) && trap "ssh-agent -k" EXIT
+
+	eval "$(direnv hook zsh)"
+	eval "$(starship init zsh)"
+fi
+
+if [ -n "$BASH_VERSION" ]; then
+	[[ -z "$SSH_AGENT_PID" ]] && eval $(ssh-agent) && trap "ssh-agent -k" exit
+
+	eval "$(direnv hook bash)"
+	eval "$(starship init bash)"
+fi
+
