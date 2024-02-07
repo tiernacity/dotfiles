@@ -1,26 +1,51 @@
+[language-server.efm]
+command = "efm-langserver"
+config.documentFormatting = true
+
 [[language]]
 name = "html"
-formatter = { command = 'prettier' }
+auto-format = true
+language-servers = [
+  { name = "efm", only-features = ["format", "diagnostics"] },
+  { name = "typescript-language-server", except-features = ["format"] },
+]
 
 [[language]]
 name = "json"
-formatter = { command = 'prettier' }
+auto-format = true
+language-servers = [
+  { name = "efm", only-features = ["format", "diagnostics"] },
+  { name = "typescript-language-server", except-features = ["format"] },
+]
 
 [[language]]
 name = "css"
-formatter = { command = 'prettier' }
+auto-format = true
+language-servers = [
+  { name = "efm", only-features = ["format", "diagnostics"] },
+  { name = "typescript-language-server", except-features = ["format"] },
+]
 
 [[language]]
 name = "javascript"
-formatter = { command = 'prettier' }
 auto-format = true
+language-servers = [
+  { name = "efm", only-features = ["format", "diagnostics"] },
+  { name = "typescript-language-server", except-features = ["format"] },
+]
 
 [[language]]
 name = "typescript"
-formatter = { command = 'prettier' }
 auto-format = true
+language-servers = [
+  { name = "efm", only-features = ["format", "diagnostics"] },
+  { name = "typescript-language-server", except-features = ["format"] },
+]
 
 [[language]]
 name = "tsx"
-formatter = { command = 'prettier' }
 auto-format = true
+language-servers = [
+  { name = "efm", only-features = ["format", "diagnostics"] },
+  { name = "typescript-language-server", except-features = ["format"] },
+]
