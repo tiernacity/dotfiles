@@ -6,7 +6,7 @@ if [ -n "$ZSH_VERSION" ]; then
 fi
 
 export PATH="${HOME}/bin:$PATH"
-export EDITOR='hx'
+export EDITOR='vim'
 export KERL_BUILD_DOCS="yes"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
@@ -18,7 +18,7 @@ alias tree='tree --gitignore'
 [ -f "$HOME/.chris.local" ] && . ~/.chris.local
 
 eval "$(pkgx --shellcode)"  #docs.pkgx.sh/shellcode
-env +tmux +starship +direnv +cargo
+env +git-scm.org@latest +tmux@latest +starship@latest +direnv@latest +cargo@latest
 
 if [ -n "$ZSH_VERSION" ]; then
 	[[ -z "$SSH_AGENT_PID" ]] && eval $(ssh-agent) && trap "ssh-agent -k" EXIT
