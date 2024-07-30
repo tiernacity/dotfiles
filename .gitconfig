@@ -26,7 +26,6 @@
 	process = git-lfs filter-process
 	required = true
 [core]
-	excludesfile = /Users/chris/.gitignore
 	fsmonitor = false
 	untrackedCache = true
 [feature]
