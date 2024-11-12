@@ -1,0 +1,6 @@
+[user]
+name = "Chris Tierney"
+email = "drchristierney@gmail.com"
+
+[git]
+auto-local-branch = true
