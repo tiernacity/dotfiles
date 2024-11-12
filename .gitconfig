@@ -30,3 +30,7 @@
 	untrackedCache = true
 [feature]
 	manyFiles = true
+[init]
+	defaultBranch = main
+[rebase]
+	updateRefs = true

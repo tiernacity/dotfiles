@@ -1,4 +1,4 @@
 #!/bin/bash
 curl -fsS https://pkgx.sh | sh
 pkgx install --update hx@latest
-// cargo install --locked --bin jj jj-cli
+// env +pkg-config ; cargo install --locked --bin jj jj-cli
