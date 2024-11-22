@@ -5,7 +5,7 @@ if [ -n "$ZSH_VERSION" ]; then
 	autoload -U +X bashcompinit && bashcompinit
 fi
 
-export PATH="${HOME}/bin:$PATH"
+export PATH="${HOME}/bin:${HOME}/.local/bin:$PATH"
 export EDITOR='vim'
 export KERL_BUILD_DOCS="yes"
 export ERL_AFLAGS="-kernel shell_history enabled"

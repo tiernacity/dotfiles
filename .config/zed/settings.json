@@ -25,8 +25,8 @@
   "format_on_save": "on",
   "theme": {
     "mode": "system",
-    "light": "macOS Classic Light",
-    "dark": "macOS Classic Dark"
+    "light": "One Light",
+    "dark": "One Dark"
   },
   "vim_mode": true,
   "buffer_font_size": 15,

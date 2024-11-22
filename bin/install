@@ -1,4 +1,3 @@
 #!/bin/bash
-curl -fsS https://pkgx.sh | sh
+brew install pkgxdev/made/pkgx jj
 pkgx install --update hx@latest
-// env +pkg-config ; cargo install --locked --bin jj jj-cli
