@@ -17,8 +17,7 @@ alias tree='tree --gitignore'
 . ~/.linky
 [ -f "$HOME/.chris.local" ] && . ~/.chris.local
 
-eval "$(pkgx --shellcode)"  #docs.pkgx.sh/shellcode
-env +git-scm.org@latest +tmux@latest +starship@latest +direnv@latest +cargo@latest
+eval "$(pkgx dev --shellcode)"  # https://github.com/pkgxdev/dev
 
 if [ -n "$ZSH_VERSION" ]; then
 	[[ -z "$SSH_AGENT_PID" ]] && eval $(ssh-agent) && trap "ssh-agent -k" EXIT

@@ -1,3 +1,3 @@
 #!/bin/bash
-brew install pkgxdev/made/pkgx jj
-pkgx install --update hx@latest
+brew install pkgxdev/made/pkgx pkgxdev/made/pkgm pkgxdev/made/mash jj
+brew install helix git tmux starship direnv
