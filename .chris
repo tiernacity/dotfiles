@@ -5,7 +5,7 @@ if [ -n "$ZSH_VERSION" ]; then
 	autoload -U +X bashcompinit && bashcompinit
 fi
 
-export PATH="${HOME}/bin:${HOME}/.local/bin:$PATH"
+export PATH="${HOME}/bin:${HOME}/.local/bin:$PATH:$(brew --prefix python)/libexec/bin"
 export EDITOR='vim'
 export KERL_BUILD_DOCS="yes"
 export ERL_AFLAGS="-kernel shell_history enabled"
@@ -16,8 +16,6 @@ alias tree='tree --gitignore'
 
 . ~/.linky
 [ -f "$HOME/.chris.local" ] && . ~/.chris.local
-
-eval "$(pkgx dev --shellcode)"  # https://github.com/pkgxdev/dev
 
 if [ -n "$ZSH_VERSION" ]; then
 	[[ -z "$SSH_AGENT_PID" ]] && eval $(ssh-agent) && trap "ssh-agent -k" EXIT

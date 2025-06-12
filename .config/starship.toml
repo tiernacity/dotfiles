@@ -13,17 +13,17 @@ add_newline = false
 command_timeout = 1000
 
 [directory]
-style = "white"
+#style = "white"
 
 [git_branch]
 format = "| [$branch]($style) "
 only_attached = true
-style = "white"
+#style = "white"
 
 [git_commit]
 format = "| [$hash$tag]($style) "
 tag_disabled = false
-style = "white"
+#style = "white"
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '

@@ -7,29 +7,33 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "confirm_quit": true,
-  "assistant": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
-    },
+  "agent": {
+    "model_parameters": [],
+    "always_allow_tool_actions": false,
     "version": "2"
   },
-  "features": {
-    "inline_completion_provider": "none"
-  },
-  "show_inline_completions": false,
-  "copilot": {
-    "disabled_globs": [".env", "journal/*.md"]
-  },
+  "confirm_quit": true,
   "format_on_save": "on",
   "theme": {
     "mode": "system",
     "light": "One Light",
     "dark": "One Dark"
   },
-  "vim_mode": true,
+  "buffer_font_family": "Annotation Mono",
+  "buffer_font_weight": 400,
   "buffer_font_size": 15,
+  "terminal": {
+    "font_family": "Annotation Mono",
+    "font_weight": 300,
+    "font_size": 12
+  },
+  "vim_mode": true,
+  "edit_predictions": {
+    "mode": "eager"
+  },
+  "jupyter": {
+    "enabled": false
+  },
   "language_overrides": {
     "Markdown": {
       "preferred_line_length": 92
@@ -52,27 +56,5 @@
   "file_types": {
     // set all .json files to be seen as JSONC
     "JSONC": ["*.json"]
-  },
-  "languages": {
-    "JavaScript": {
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
-    },
-    "JSX": {
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
-    },
-    "TypeScript": {
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
-    },
-    "TSX": {
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
-    }
   }
 }

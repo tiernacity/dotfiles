@@ -27,11 +27,11 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[core]
-	fsmonitor = false
-	untrackedCache = true
+# [core]
+#	fsmonitor = false
+#	untrackedCache = true
 [feature]
-	manyFiles = true
+#	manyFiles = true
 [init]
 	defaultBranch = main
 [rebase]
